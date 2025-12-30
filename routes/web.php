@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloController;
 use App\Http\Controllers\Hello2Controller;
+use App\Http\Controllers\Hello33Controller;
 
 Route::get('hello/{id?}/{pass?}', [HelloController::class, 'index']);
 
@@ -32,3 +33,9 @@ Route::get('hello/{msg}', function($msg){
 EOF;
     return $html;
 });
+
+Route::get('hello3', function(){
+    return view('hello3.index');
+});
+
+Route::get('hello33', [Hello33Controller::class, 'index']);
