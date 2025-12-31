@@ -7,6 +7,7 @@ use App\Http\Controllers\Hello3Controller;
 use App\Http\Controllers\Hello33Controller;
 use App\Http\Controllers\Hello4Controller;
 use App\Http\Controllers\Hello5Controller;
+use App\Http\Controllers\Hello6Controller;
 
 Route::get('hello/{id?}/{pass?}', [HelloController::class, 'index']);
 
@@ -66,3 +67,5 @@ Route::get('hello2/index5', function(){
     $data = ['りんご', 'バナナ', 'オレンジ', 'ぶどう', 'いちご'];
     return view('hello2.index5', ['data' => $data]);
 });
+
+Route::get('layouts/index', [Hello6Controller::class, 'index']);
