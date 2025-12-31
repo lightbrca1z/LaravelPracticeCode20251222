@@ -6,6 +6,7 @@ use App\Http\Controllers\Hello2Controller;
 use App\Http\Controllers\Hello3Controller;
 use App\Http\Controllers\Hello33Controller;
 use App\Http\Controllers\Hello4Controller;
+use App\Http\Controllers\Hello5Controller;
 
 Route::get('hello/{id?}/{pass?}', [HelloController::class, 'index']);
 
@@ -43,3 +44,25 @@ Route::get('hello33', [Hello33Controller::class, 'index']);
 Route::get('hello4', [Hello4Controller::class, 'index']);
 
 Route::post('hello4', [Hello4Controller::class, 'post']);
+
+Route::get('hello2/index1', function(){
+    $data = ['msg' => 'Bladeテンプレートのサンプルです。'];
+    return view('hello2.index1', $data);
+});
+
+Route::get('hello2/index2', [Hello5Controller::class, 'index']);
+Route::post('hello2/index2', [Hello5Controller::class, 'post']);
+
+Route::get('hello2/index3', function(){
+    return view('hello2.index3');
+});
+
+Route::get('hello2/index4', function(){
+    $data = ['りんご', 'バナナ', 'オレンジ', 'ぶどう', 'いちご'];
+    return view('hello2.index4', ['data' => $data]);
+});
+
+Route::get('hello2/index5', function(){
+    $data = ['りんご', 'バナナ', 'オレンジ', 'ぶどう', 'いちご'];
+    return view('hello2.index5', ['data' => $data]);
+});

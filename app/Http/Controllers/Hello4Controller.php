@@ -17,7 +17,7 @@ class Hello4Controller extends Controller
         $msg = $request->msg;
         $data = [
             'msg' => 'こんにちは, '.$msg.'さん!',
-        ];w
+        ];
         return view('hello3.index2',$data);
     }
 }
